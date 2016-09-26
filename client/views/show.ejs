@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PetSpot</title>
+		<link rel="stylesheet" href="/css/app.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type ="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">PetSpot</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					<li><a href="/kittens/new">Add Cat</a></li>
+				</ul>
+
+			</div>
+		</nav>
+
+		<p>Name: <%= kitten.name %></p>
+		<p>Breed: <%= kitten.breed %></p>
+		<p>Color: <%= kitten.color %></p>
+		<p>Personality: <%= kitten.personality %></p>
+		<p>Age: <%= kitten.age %></p>
+		<p>Favorite Food: <%= kitten.food %></p>
+		<p>Favorite Toy: <%= kitten.toy %></p>
+
+		<form action="/kittens/delete/<%= kitten._id %>" method="post" style='display: inline-block;'>
+			<button class="btn btn-default">Delete Cat</button>
+		</form>
+		<form action="/kittens/edit/<%= kitten._id %>" method="post" style='display: inline-block;'>
+			<button class="btn btn-default">Edit Cat</button>
+		</form>
+		<form action="/" method="get" style='display: inline-block;'>
+			<button class="btn btn-default">Back to Dashboard</button>
+		</form>
+		<div class="footer">
+			<p class="text-center text-muted">&copy; Copyright PetSpot</p>
+		</div>
+	</body>
+</html>

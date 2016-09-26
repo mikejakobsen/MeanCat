@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PetSpot</title>
+		<link rel="stylesheet" href="/css/app.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type ="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">PetSpot</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					<li><a href="/kittens/new">Add Cat</a></li>
+				</ul>
+
+			</div>
+		</nav>
+		<h2>Edit A Kitten</h2>
+		<form action="/kittens/edit_submit/<%= kitten._id %>" method="post" class="form-group">
+			<label>Name: </label>
+			<input type="text" name="name" class="form-control" value="<%= kitten.name %>"></input>
+			<label>Breed: </label>
+			<input type="text" name="breed" class="form-control" value="<%= kitten.breed %>"></input>
+			<label>Color: </label>
+			<input type="text" name="color" class="form-control" value="<%= kitten.color %>"></input>
+			<label>Personality: </label>
+			<input type="text" name="personality" class="form-control" value="<%= kitten.personality %>"></input>
+			<label>Age: </label>
+			<input type="number" name="age" class="form-control" value="<%= kitten.age %>"></input>
+			<label>Favorite Food: </label>
+			<input type="text" name="food" class="form-control" value="<%= kitten.food %>"></input>
+			<label>Favorite Toy: </label>
+			<input type="text" name="toy" class="form-control" value="<%= kitten.toy %>"></input><br>
+			<input type="submit" class="btn btn-default" value="Update"></input>
+		</form>
+		<form action="/" method="get">
+			<button style="margin-top: 30px;" class="btn btn-default">Back to Dashboard</button>
+		</form>
+		<div class="footer">
+			<p class="text-center text-muted">&copy; Copyright PetSpot</p>
+		</div>
+	</body>
+</html>
